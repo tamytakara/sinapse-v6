@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Iniciado:</strong>
+  <%= @simulado.created_at %>
+</p>
+<p>
+  <strong>Prova:</strong>
+  <%= @simulado.prova.name %>
+</p>
+<p>
+  <strong>Vestibulando:</strong>
+  <%= @simulado.vestibulando.username %>
+</p>
+<p>
+  <strong>Encerrado:</strong>
+  <%= @simulado.end %>
+</p>
+
+<%= link_to 'Edit', edit_simulado_path(@simulado) %> |
+<%= link_to 'Back', simulados_path %>

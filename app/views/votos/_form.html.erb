@@ -1,0 +1,32 @@
+<%= form_with(model: voto, local: true) do |form| %>
+  <% if voto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(voto.errors.count, "error") %> prohibited this voto from being saved:</h2>
+
+      <ul>
+        <% voto.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :positivo %>
+    <%= form.check_box :positivo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :resolution_id %>
+    <%= form.text_field :resolution_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

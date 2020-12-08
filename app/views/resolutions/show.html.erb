@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @resolution.desc %>
+</p>
+<p>
+  <strong>Questão:</strong>
+  <%= @resolution.question.desc %>
+</p>
+
+<p>
+  <strong>Universitário:</strong>
+  <%= @resolution.universitario.username %>
+</p>
+
+
+<%= link_to 'Edit', edit_resolution_path(@resolution) %> |
+<%= link_to 'Back', resolutions_path %>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @prova.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @prova.desc %>
+</p>
+<p>
+  <strong>Vestibular:</strong>
+  <%= @prova.admission_exam.name %>
+</p>
+
+<%= link_to 'Edit', edit_prova_path(@prova) %> |
+<%= link_to 'Back', provas_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @universitario.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @universitario.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @universitario.password_hash %>
+</p>
+
+<%= link_to 'Edit', edit_universitario_path(@universitario) %> |
+<%= link_to 'Back', universitarios_path %>

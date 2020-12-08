@@ -1,0 +1,37 @@
+<%= form_with(model: ambition, local: true) do |form| %>
+  <% if ambition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ambition.errors.count, "error") %> prohibited this ambition from being saved:</h2>
+
+      <ul>
+        <% ambition.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.text_field :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course_id %>
+    <%= form.text_field :course_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admission_exam_id %>
+    <%= form.text_field :admission_exam_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vestibulando_id %>
+    <%= form.text_field :vestibulando_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

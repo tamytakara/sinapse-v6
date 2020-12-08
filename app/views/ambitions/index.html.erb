@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ambitions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Curso</th>
+      <th>Vestibular</th>
+      <th>Vestibulando</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ambitions.each do |ambition| %>
+      <tr>
+        <td><%= ambition.data %></td>
+        <td><%= ambition.course.name %></td>
+        <td><%= ambition.admission_exam.name %></td>
+        <td><%= ambition.vestibulando.username %></td>
+        <td><%= link_to 'Show', ambition %></td>
+        <td><%= link_to 'Edit', edit_ambition_path(ambition) %></td>
+        <td><%= link_to 'Destroy', ambition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ambition', new_ambition_path %>

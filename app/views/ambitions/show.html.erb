@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @ambition.data %>
+</p>
+<p>
+  <strong>Curso:</strong>
+  <%= @ambition.course.name %>
+</p>
+<p>
+  <strong>Vestibular:</strong>
+  <%= @ambition.admission_exam.name %>
+</p>
+<p>
+  <strong>Vestibulando:</strong>
+  <%= @ambition.vestibulando.username %>
+</p>
+
+<%= link_to 'Edit', edit_ambition_path(@ambition) %> |
+<%= link_to 'Back', ambitions_path %>

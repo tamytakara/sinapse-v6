@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Positivo:</strong>
+  <%= @voto.positivo %>
+</p>
+
+<p>
+  <strong>Resolução:</strong>
+  <%= @voto.resolution.desc %>
+</p>
+
+<p>
+  <strong>Usuário:</strong>
+  <%= @voto.user.username %>
+</p>
+
+<%= link_to 'Edit', edit_voto_path(@voto) %> |
+<%= link_to 'Back', votos_path %>

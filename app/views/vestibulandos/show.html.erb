@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @vestibulando.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @vestibulando.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @vestibulando.password_hash %>
+</p>
+
+<%= link_to 'Edit', edit_vestibulando_path(@vestibulando) %> |
+<%= link_to 'Back', vestibulandos_path %>
