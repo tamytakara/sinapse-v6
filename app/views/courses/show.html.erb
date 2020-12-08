@@ -10,5 +10,12 @@
   <%= @course.area %>
 </p>
 
+<p>
+  <strong>Universidades:</strong>
+</p>
+  <%@course.universidades.map do |universidade|%>
+    <p><%=universidade.name%> <%= link_to 'Show', universidade %></p>
+  <%end%>
+
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

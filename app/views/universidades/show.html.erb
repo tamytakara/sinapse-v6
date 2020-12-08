@@ -5,5 +5,19 @@
   <%= @universidade.name %>
 </p>
 
+<p>
+  <strong>Cursos:</strong>
+</p>
+  <%@universidade.courses.map do |course|%>
+    <p><%=course.name%> <%= link_to 'Show', course %></p>
+  <%end%>
+
+<p>
+  <strong>Vestibulares:</strong>
+</p>
+  <%@universidade.admission_exams.map do |admission_exam|%>
+    <p><%=admission_exam.name%> <%= link_to 'Show', admission_exam %></p>
+  <%end%>   
+
 <%= link_to 'Edit', edit_universidade_path(@universidade) %> |
 <%= link_to 'Back', universidades_path %>

@@ -10,5 +10,12 @@
   <%= @admission_exam.desc %>
 </p>
 
+<p>
+  <strong>Universidades:</strong>
+</p>
+  <%@admission_exam.universidades.map do |universidade|%>
+    <p><%=universidade.name%> <%= link_to 'Show', universidade %></p>
+  <%end%>
+
 <%= link_to 'Edit', edit_admission_exam_path(@admission_exam) %> |
 <%= link_to 'Back', admission_exams_path %>
