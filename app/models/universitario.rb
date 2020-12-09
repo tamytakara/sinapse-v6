@@ -1,8 +1,10 @@
 class Universitario < User
     type = "Universitario"
-    has_and_belongs_to_many :admission_exams
-    has_and_belongs_to_many :materias
-    has_many :resolutions
+    has_and_belongs_to_many :admission_exams, :dependent => :delete_all
+    before_destroy {|universitario| universitario.admission_exams.clear}
+    has_and_belongs_to_many :materias, :dependent => :delete_all
+    before_destroy {|universitario| universitario.materias.clear}
+    has_many :resolutions, :dependent => :delete_all
     #def universitario_infos
     #    {
     #        username: self.username,

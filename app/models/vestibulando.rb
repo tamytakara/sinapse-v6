@@ -1,7 +1,7 @@
 class Vestibulando < User
     type = "Vestibulando"
-    has_many :ambitions
-    has_many :simulados
+    has_many :ambitions, :dependent => :delete_all
+    has_many :simulados, :dependent => :delete_all
 
     def vestibulando_infos
         {

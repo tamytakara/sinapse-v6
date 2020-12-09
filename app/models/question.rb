@@ -6,8 +6,8 @@ class Question < ApplicationRecord
     enumerize :type, in: [:alternativa, :dissertativa], default: :alternativa
 
     belongs_to :prova
-    has_many :answers
-    has_many :alternativas
-    has_and_belongs_to_many :materias
-    has_many :resolutions
+    has_many :answers, :dependent => :delete_all
+    has_many :alternativas, :dependent => :delete_all
+    has_and_belongs_to_many :materias, :dependent => :delete_all
+    has_many :resolutions, :dependent => :delete_all
 end

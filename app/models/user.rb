@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
     before_save :emailDownCase
 
-    has_many :votos
+    has_many :votos, :dependent => :delete_all
     
     def password
         @password ||= Password.new(password_hash)
