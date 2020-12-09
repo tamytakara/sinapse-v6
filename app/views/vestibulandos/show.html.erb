@@ -15,5 +15,27 @@
   <%= @vestibulando.password_hash %>
 </p>
 
+<p>
+  <strong>Pretensões:</strong>
+</p>
+<%@vestibulando.ambitions.map do |ambition|%>
+<p><%=ambition.course.name%> através <%=ambition.admission_exam.name%> em <%=ambition.data%> |<%= link_to 'Show', ambition %>| </p>
+<%end%>
+
+
+<p>
+  <strong>Simulados:</strong>
+</p>
+<%@vestibulando.simulados.map do |simulado|%>
+<p><%=simulado.prova.name%> feito em <%=simulado.created_at%> |<%= link_to 'Show', simulado %>|</p>
+<%end%>
+
+<p>
+  <strong>Votos:</strong>
+</p>
+<%@vestibulando.votos.map do |voto|%>
+<p><%=voto.positivo%> em <%=voto.resolution%> |<%= link_to 'Show', voto %>| </p>
+<%end%>
+
 <%= link_to 'Edit', edit_vestibulando_path(@vestibulando) %> |
 <%= link_to 'Back', vestibulandos_path %>

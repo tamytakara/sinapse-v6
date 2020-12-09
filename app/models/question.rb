@@ -8,6 +8,7 @@ class Question < ApplicationRecord
     belongs_to :prova
     has_many :answers, :dependent => :delete_all
     has_many :alternativas, :dependent => :delete_all
-    has_and_belongs_to_many :materias, :dependent => :delete_all
     has_many :resolutions, :dependent => :delete_all
+    has_and_belongs_to_many :materias
+    before_destroy {|question| question.materias.clear}
 end

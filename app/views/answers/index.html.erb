@@ -1,11 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Answers</h1>
+<h1>Respostas</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Desc</th>
+      <th>Resposta</th>
+      <th>Gabarito</th>
+      <th>Correta</th>
+      <th>Questão</th>
+      <th>Prova</th>
+      <th>Vestibulando</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +19,11 @@
     <% @answers.each do |answer| %>
       <tr>
         <td><%= answer.desc %></td>
+        <td><%= answer.question.gabarito %></td>
+        <td><%= answer.correta %></td>
+        <td><%= answer.question.desc %></td>
+        <td><%= answer.question.prova.name %> - <%= answer.question.prova.admission_exam.name %> </td>
+        <td><%= answer.simulado.vestibulando.username %></td>
         <td><%= link_to 'Show', answer %></td>
         <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
         <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>

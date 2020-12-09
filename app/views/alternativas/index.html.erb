@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th>Desc</th>
+      <th>Questão</th>
+      <th>Prova</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +16,8 @@
     <% @alternativas.each do |alternativa| %>
       <tr>
         <td><%= alternativa.desc %></td>
+        <td><%= alternativa.question.desc %></td>
+        <td><%= alternativa.question.prova.name %> - <%= alternativa.question.prova.admission_exam.name %> </td>
         <td><%= link_to 'Show', alternativa %></td>
         <td><%= link_to 'Edit', edit_alternativa_path(alternativa) %></td>
         <td><%= link_to 'Destroy', alternativa, method: :delete, data: { confirm: 'Are you sure?' } %></td>

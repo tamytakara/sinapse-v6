@@ -1,19 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Usuário:</strong>
+  <%= @voto.user.username %> |<%= link_to 'Show', @voto.user %>|
+</p>
+
+<p>
   <strong>Positivo:</strong>
   <%= @voto.positivo %>
 </p>
 
 <p>
   <strong>Resolução:</strong>
-  <%= @voto.resolution.desc %>
+  <%= @voto.resolution.desc %> |<%= link_to 'Show', @voto.resolution %>|
 </p>
 
 <p>
-  <strong>Usuário:</strong>
-  <%= @voto.user.username %>
+  <strong>Feita por:</strong>
+  <%= @voto.resolution.universitario.username %> |<%= link_to 'Show',@voto.resolution.universitario %>|
 </p>
+<p>
+  <strong>Questão:</strong>
+  <%= @voto.resolution.question.desc %> |<%= link_to 'Show',@voto.resolution.question %>|
+</p>
+<p>
+  <strong>Prova:</strong>
+  <%= @voto.resolution.question.prova.name %> - <%= @voto.resolution.question.prova.admission_exam.name %> |<%= link_to 'Show', @voto.resolution.question.prova %>|
+</p>
+
+
 
 <%= link_to 'Edit', edit_voto_path(@voto) %> |
 <%= link_to 'Back', votos_path %>

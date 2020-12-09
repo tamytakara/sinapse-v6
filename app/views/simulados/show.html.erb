@@ -5,17 +5,24 @@
   <%= @simulado.created_at %>
 </p>
 <p>
+  <strong>Encerrado:</strong>
+  <%= @simulado.end %> 
+</p>
+
+<p>
   <strong>Prova:</strong>
-  <%= @simulado.prova.name %>
+  <%= @simulado.prova.name %> |<%= link_to 'Show', @simulado.prova %>|
 </p>
 <p>
   <strong>Vestibulando:</strong>
-  <%= @simulado.vestibulando.username %>
+  <%= @simulado.vestibulando.username %> |<%= link_to 'Show', @simulado.vestibulando %>|
 </p>
 <p>
-  <strong>Encerrado:</strong>
-  <%= @simulado.end %>
+  <strong>Respostas:</strong>
 </p>
+<%@simulado.answers.map do |answer|%>
+<p><%=answer.desc%> da <%=answer.question.desc%>|<%= link_to 'Show', answer %>| </p>
+<%end%>
 
 <%= link_to 'Edit', edit_simulado_path(@simulado) %> |
 <%= link_to 'Back', simulados_path %>

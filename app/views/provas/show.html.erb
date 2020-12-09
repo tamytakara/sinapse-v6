@@ -10,9 +10,26 @@
   <%= @prova.desc %>
 </p>
 <p>
-  <strong>Vestibular:</strong>
-  <%= @prova.admission_exam.name %>
+
+<strong>Vestibular:</strong>
+  <%= @prova.admission_exam.name %> |<%= link_to 'Show', @prova.admission_exam %>|
 </p>
+
+<p>
+  <strong>Questões:</strong>
+</p>
+<%@prova.questions.map do |question|%>
+<p><%=question.desc%> |<%= link_to 'Show', question %>|</p>
+<%end%>
+
+<p>
+  <strong>Simulados:</strong>
+</p>
+<%@prova.simulados.map do |simulado|%>
+<p><%=simulado.vestibulando.username%> fez em <%=simulado.created_at%> |<%= link_to 'Show', simulado %>|</p>
+<%end%>
+
+
 
 <%= link_to 'Edit', edit_prova_path(@prova) %> |
 <%= link_to 'Back', provas_path %>

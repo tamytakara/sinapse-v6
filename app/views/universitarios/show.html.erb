@@ -15,5 +15,19 @@
   <%= @universitario.password_hash %>
 </p>
 
+<p>
+  <strong>Resoluções:</strong>
+</p>
+<%@universitario.resolutions.map do |resolution|%>
+<p><%=resolution.desc%> em <%=resolution.question.desc%> |<%= link_to 'Show', resolution %>| </p>
+<%end%>
+
+<p>
+  <strong>Votos:</strong>
+</p>
+<%@universitario.votos.map do |voto|%>
+<p><%=voto.positivo%> em <%=voto.resolution%> |<%= link_to 'Show', voto %>| </p>
+<%end%>
+
 <%= link_to 'Edit', edit_universitario_path(@universitario) %> |
 <%= link_to 'Back', universitarios_path %>

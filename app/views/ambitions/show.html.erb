@@ -6,15 +6,15 @@
 </p>
 <p>
   <strong>Curso:</strong>
-  <%= @ambition.course.name %>
+  <%= @ambition.course.name %>  |<%= link_to 'Show', @ambition.course %>|
 </p>
 <p>
   <strong>Vestibular:</strong>
-  <%= @ambition.admission_exam.name %>
+  <%= @ambition.admission_exam.name %> |<%= link_to 'Show', @ambition.admission_exam %>|
 </p>
 <p>
   <strong>Vestibulando:</strong>
-  <%= @ambition.vestibulando.username %>
+  <%= @ambition.vestibulando.username %> |<%= link_to 'Show', @ambition.vestibulando %>|
 </p>
 
 <%= link_to 'Edit', edit_ambition_path(@ambition) %> |

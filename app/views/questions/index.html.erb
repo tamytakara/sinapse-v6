@@ -7,7 +7,6 @@
     <tr>
       <th>Desc</th>
       <th>Gabarito</th>
-      <th>Image</th>
       <th>Prova</th>
       <th colspan="3"></th>
     </tr>
@@ -18,8 +17,7 @@
       <tr>
         <td><%= question.desc %></td>
         <td><%= question.gabarito %></td>
-        <td><%= question.image %></td>
-        <td><%= question.prova.name %></td>
+        <td><%= question.prova.name %> - <%= question.prova.admission_exam.name %></td>
         <td><%= link_to 'Show', question %></td>
         <td><%= link_to 'Edit', edit_question_path(question) %></td>
         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>

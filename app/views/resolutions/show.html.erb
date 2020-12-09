@@ -4,15 +4,25 @@
   <strong>Desc:</strong>
   <%= @resolution.desc %>
 </p>
-<p>
-  <strong>Questão:</strong>
-  <%= @resolution.question.desc %>
-</p>
 
 <p>
-  <strong>Universitário:</strong>
-  <%= @resolution.universitario.username %>
+  <strong>Gabarito:</strong>
+  <%= @resolution.question.gabarito %>
 </p>
+<p>
+  <strong>Questão:</strong>
+  <%= @resolution.question.desc %> |<%= link_to 'Show', @resolution.question %>|
+</p>
+<p>
+  <strong>Universitário:</strong>
+  <%= @resolution.universitario.username %> |<%= link_to 'Show',  @resolution.universitario %>|
+</p>
+<p>
+  <strong>Votos:</strong>
+</p>
+<%@resolution.votos.map do |voto|%>
+<p><%=voto.positivo%> em <%=voto.user.username%> |<%= link_to 'Show', voto %>| </p>
+<%end%>
 
 
 <%= link_to 'Edit', edit_resolution_path(@resolution) %> |

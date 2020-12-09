@@ -1,16 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Desc:</strong>
+  <strong>Resposta:</strong>
   <%= @answer.desc %>
+</p>
+
+<p>
+  <strong>Gabarito:</strong>
+  <%= @answer.question.gabarito %> 
+</p>
+<p>
+  <strong>Correta:</strong>
+  <%= @answer.correta %>
+</p>
+
+<p>
+  <strong>Simulado:</strong>
+  Feito em <%= @answer.simulado.created_at %> às <%= @answer.simulado.end %>  |<%= link_to 'Show',  @answer.simulado %>|
 </p>
 <p>
   <strong>Prova:</strong>
-  <%= @answer.simulado.prova.name %>
+  <%= @answer.simulado.prova.name %> -  <%= @answer.simulado.prova.admission_exam.name %>  |<%= link_to 'Show',  @answer.simulado.prova %>|
 </p>
 <p>
   <strong>Questão:</strong>
-  <%= @answer.question.desc %>
+  <%= @answer.question.desc %> |<%= link_to 'Show', @answer.question %>|
 </p>
 
 

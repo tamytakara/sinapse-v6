@@ -6,7 +6,7 @@
 </p>
 <p>
   <strong>Questão:</strong>
-  <%= @alternativa.question.desc %>
+  <%= @alternativa.question.desc %> |<%= link_to 'Show', @alternativa.question %>|
 </p>
 
 <%= link_to 'Edit', edit_alternativa_path(@alternativa) %> |

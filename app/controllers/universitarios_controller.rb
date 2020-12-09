@@ -10,6 +10,7 @@ class UniversitariosController < ApplicationController
   # GET /universitarios/1
   # GET /universitarios/1.json
   def show
+    @universitario = Universitario.find(params[:id])
   end
 
   # GET /universitarios/new

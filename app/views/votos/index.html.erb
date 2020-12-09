@@ -5,9 +5,12 @@
 <table>
   <thead>
     <tr>
+      <th>Usuário</th>
       <th>Positivo</th>
       <th>Resolução</th>
-      <th>Usuário</th>
+      <th>Feita por</th>
+      <th>Questão</th>
+      <th>Prova</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +18,12 @@
   <tbody>
     <% @votos.each do |voto| %>
       <tr>
+        <td><%= voto.user.username %></td>
         <td><%= voto.positivo %></td>
         <td><%= voto.resolution.desc %></td>
-        <td><%= voto.user.username %></td>
+        <td><%= voto.resolution.universitario.username %></td>
+        <td><%= voto.resolution.question.desc %></td>
+        <td><%= voto.resolution.question.prova.name %>-<%= voto.resolution.question.prova.admission_exam.name %></td>
         <td><%= link_to 'Show', voto %></td>
         <td><%= link_to 'Edit', edit_voto_path(voto) %></td>
         <td><%= link_to 'Destroy', voto, method: :delete, data: { confirm: 'Are you sure?' } %></td>

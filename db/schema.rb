@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_231650) do
+ActiveRecord::Schema.define(version: 2020_12_09_115239) do
 
   create_table "admission_exams", force: :cascade do |t|
     t.string "name"
     t.text "desc"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "admission_exams_universidade", id: false, force: :cascade do |t|
+    t.integer "universidade_id", null: false
+    t.integer "admission_exam_id", null: false
   end
 
   create_table "admission_exams_universidades", id: false, force: :cascade do |t|
@@ -55,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_12_08_231650) do
     t.integer "simulado_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "correta"
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["simulado_id"], name: "index_answers_on_simulado_id"
   end

@@ -17,5 +17,21 @@
     <p><%=universidade.name%> <%= link_to 'Show', universidade %></p>
   <%end%>
 
+<p>
+  <strong>Provas:</strong>
+</p>
+<%@admission_exam.provas.map do |prova|%>
+<p><%=prova.name%> |<%= link_to 'Show', prova %>| </p>
+<%end%>
+
+
+
+<p>
+  <strong>Pretensões:</strong>
+</p>
+<%@admission_exam.ambitions.map do |ambition|%>
+<p><%=ambition.course.name%> pretende <%=ambition.course.name%> em <%=ambition.data%> |<%= link_to 'Show', ambition %>| </p>
+<%end%>
+
 <%= link_to 'Edit', edit_admission_exam_path(@admission_exam) %> |
 <%= link_to 'Back', admission_exams_path %>

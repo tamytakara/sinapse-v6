@@ -20,5 +20,19 @@
   <%= @question.prova.name %>
 </p>
 
+<p>
+  <strong>Alternativas:</strong>
+</p>
+<%@question.alternativas.map do |alternativa|%>
+<p><%=alternativa.desc%> |<%= link_to 'Show', alternativa %>| </p>
+<%end%>
+
+<p>
+  <strong>Resoluções:</strong>
+</p>
+<%@question.resolutions.map do |resolution|%>
+<p><%=resolution.desc%> de <%=resolution.universitario.username%> |<%= link_to 'Show', resolution %>| </p>
+<%end%>
+
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
